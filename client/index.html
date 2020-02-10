@@ -14,28 +14,17 @@
   </head>
 
   <body>
-    <div class="container" id="app">
-      <!-- Logout button and notification for success / error event -->
-      <div class="row my-3">
-        <button id="btn-logout" class="btn btn-primary ml-auto">Logout</button>
-      </div>
-
-      <div id="alert" class="alert alert-warning alert-dismissible fade show" role="alert">
-        Your notification goes here
-      </div>
-
-      <!-- This is Login Form  -->
-      <div>
+    <div class="container">
+      <div id="loginPage">
         <h1>Login</h1>
-        <form class="my-4">
+        <form class="my-4" id="formLogin">
           <div class="form-group">
             <label for="email">Email</label>
             <input
               type="email"
               class="form-control"
               name="email"
-              id="email"
-              required
+              id="email-login"
             />
           </div>
           <div class="form-group">
@@ -44,29 +33,24 @@
               type="password"
               class="form-control"
               name="password"
-              id="password"
-              required
+              id="password-login"
             />
           </div>
-          <button type="submit" class="btn btn-primary">
-            Submit
-          </button>
-          <button type="submit" class="btn btn-info">
-            Register
-          </button>
+          <button type="submit" class="btn btn-primary">Login</button>
+          <button type="submit" class="btn btn-info" id="btn-register">Register</button>
         </form>
       </div>
 
-      <div>
+      <div id="registerPage">
         <h1>Register</h1>
-        <form class="my-4">
+        <form class="my-4" id="formRegister">
           <div class="form-group">
             <label for="name">Name</label>
             <input
               type="name"
               class="form-control"
               name="name"
-              id="name"
+              id="name-regist"
               required
             />
           </div>
@@ -76,7 +60,7 @@
               type="email"
               class="form-control"
               name="email"
-              id="email"
+              id="email-regist"
               required
             />
           </div>
@@ -86,60 +70,48 @@
               type="password"
               class="form-control"
               name="password"
-              id="password"
+              id="password-regist"
               required
             />
           </div>
-          <button type="submit" class="btn btn-primary">
-            Submit
-          </button>
-          <button type="submit" class="btn btn-warning">
-            Random User
-          </button>
-          <button type="submit" class="btn btn-info">
-            Login
-          </button>
+          <button type="submit" class="btn btn-primary">Submit</button>
+          <button type="submit" class="btn btn-warning" id="btn-random-user">Random User</button>
+          <button type="submit" class="btn btn-info" id="btn-login">Login</button>
         </form>
-      <ist -->
-      <div>
-        <h1>Comic Collection</h1>
-        <div class="row my-4">
-          <!-- Each of comic will have one of this card -->
-          <div class="col-4 mb-4">
-            <div class="card text-center">
-              <img
-                src="https://www.idwpublishing.com/wp-content/uploads/2018/10/aHR0cDovL3d3dy5uZXdzYXJhbWEuY29tL2ltYWdlcy9pLzAwMC8yNDAvNzQ0L29yaWdpbmFsL1NwaWRlcm1hbjAxX2N2ckEuanBn.jpeg"
-                class="card-img-top">
-              <div class="card-body">
-                <h5 class="card-title">The Amazing Spiderman - new Avengers</h5>
-                <p class="card-text">Author: J Michael S</p>
-                <button class="btn btn-primary">Edit</button>
-              </div>
-            </div>
-          </div>
-        </div>
+      </div>
 
-      <!-- This is form page to update a comic -->
-      <div>
+      <div id="listComic">
+        <div class="row my-3"><button id="btn-logout" class="btn btn-primary ml-auto">Logout</button></div>
+        <div id="alert" class="alert alert-warning alert-dismissible fade show" role="alert">
+          <p id="caption-alert"></p>
+        </div>
+        <h1>Comic Collection</h1>
+        <div class="row my-4" id="rowComic">
+          
+        </div>
+      </div>
+
+      <div id="editComicPage">
         <h1>Update Comic</h1>
-        <form class="my-4">
+        <form class="my-4" id="formEditComic">
+          <input type="hidden" id="idEdit">
           <div class="form-group">
             <label for="title">Title</label>
-            <input id="title" type="text" class="form-control" name="title" />
+            <input id="title-edit" type="text" class="form-control" name="title" />
           </div>
           <div class="form-group">
             <label for="author">Author</label>
-            <input type="text" class="form-control" name="author" />
+            <input type="text" id="author-edit" class="form-control" name="author" />
           </div>
           <div class="form-group">
             <label for="imageUrl">Comic Image URL</label>
-            <input type="text" class="form-control" name="imageUrl" />
+            <input type="text" id="imageUrl-edit" class="form-control" name="imageUrl" />
           </div>
-          <button id="btn-update" type="submit" class="btn btn-primary">
-            Submit
-          </button>
+          <button type="submit" class="btn btn-primary">Submit</button>
         </form>
-      </di>
+      </div>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
   </body>
+  <script type="text/javascript" src="./app.js"></script>
 </html>
