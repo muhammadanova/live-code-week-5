@@ -73,7 +73,6 @@
   
   formRegister.on('submit', function(e){
     e.preventDefault()
-    clearErrorForm(doRegister)
     let email = email_regist.val()
     let pass = password_regist.val()
     $.ajax({
@@ -86,11 +85,10 @@
     })
     .done(res => {
       clearForm(doRegister)
-      registerPage.removeClass('active');
       startset()
     })
     .fail(err => {
-      errorMessage(JSON.parse(err.responseText), 'regist')
+      console.log(err)
     })
   })
   
@@ -138,11 +136,9 @@
   });
 
   function errorMessage(err, slug){
-    alertMessage.empty()
     for(let key in err){
       $(`#${key}-${slug}`).addClass('is-invalid')
       $(`.${key}-${slug}`).text(err[key])
-      alertMessage.append(`<div class="content-alert">Failed! ${err[key]}</div>`)
     }
   }
 
